@@ -8,30 +8,48 @@ let itemEl6 = document.getElementById("item6");
 
 
 const questions = [
-    "Which color is the darkest?",
-    "This is a second question",
-    "This is the third?", 
-    "This is the FOURth!"
+    "Which color is different?",
+    //"This is a second question",
+    //"This is the third?", 
+    //"This is the FOURth!"
 ];
-// ein array in dem alle Fragen des spiels enthalten sind
 
-window.onload = function () { //jedes mal wenn die seite geladen wirdsoll eine zufällige frage aus dem Array gepickt werden -> das soll die function() machen
+window.onload = function () {
     setRandomQuestion();
     };
     
     
-    function setRandomQuestion() {
-    //hier definieren wir setRandomQuestion()
-    const randomIndex = Math.floor(Math.random() * questions.length);
-    // wir generieren ein zufälligen Array index und speichern es in randomIndex
+function setRandomQuestion() {
 
+    const randomIndex = Math.floor(Math.random() * questions.length);
     const randomQuestion = questions[randomIndex];
-    // in randomQuestion speichern wir das array item mit zufälligem Index
-    
+
     questionEL.innerText = randomQuestion;
-    //hier verwenden wir .innerText auf das questionEl und setzen es randomQuestion (dem zufälligen Array Item gleich)
+
+    if (questionEL.innerText === "Which color is different?") {
+        function getRandomColor () {
+            let letters = "0123456789ABCDEF";
+            let color = "#";
+                for (let i = 0; i < 6; i++) {
+                  color += letters[Math.floor(Math.random() * 16)];
+                }
+                return color;
+        }
+    
+        let elements = [itemEl1, itemEl2, itemEl3, itemEl4, itemEl5, itemEl6];
+        elements.sort(function() { return 0.5 - Math.random() });
+        let selectedElements = elements.slice(0, 5);
+        let randomColor = getRandomColor();
+    
+        selectedElements.forEach(function(element) {
+            if (randomColor) {
+                element.style.backgroundColor = randomColor;
+            } 
+        });
+
+    
     }
 
-
+}
 
 

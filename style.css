@@ -33,30 +33,37 @@ body {
 
 .item1 {
     padding: 4px;
-    background-color: yellow;
+    background-color: initial;
+    cursor: pointer;
+    
 }
 
 .item2 {
     padding: 4px;
-    background-color: blanchedalmond;
+    background-color: initial;
+    cursor: pointer;
 }
 
 .item3 {
     padding: 4px;
-    background-color: green;
+    background-color: initial;
+    cursor: pointer;
 }
 
 .item4 {
     padding: 4px;
-    background-color: red;
+    background-color: initial;
+    cursor: pointer;
 }
 
 .item5 {
-    background-color: coral;
+    background-color: initial;
+    cursor: pointer;
 }
 
 .item6 {
     padding: 4px;
-    background-color: goldenrod;
+    background-color: initial;
+    cursor: pointer;
 }
 
